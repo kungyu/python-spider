@@ -24,8 +24,9 @@ def print_time(counter):
 		counter-=1
 		time.sleep(1)
 
-def main():
-	list = [10,20,30,40]
+def main(list=None):
+	if list is None:
+		list = [10,20,30,40]
 	files = range(len(list))
 	threads = []
 	for val in list:
