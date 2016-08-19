@@ -2,8 +2,6 @@
 #coding=utf-8
 import threading
 import time
-import func
-import re
 
 class MyThread(threading.Thread):
 	"""
@@ -31,19 +29,8 @@ def main(list=None):
 		list = [10,20,30,40]
 	files = range(len(list))
 	threads = []
-	for url in list:
-		url_arr = url.split('/')
-		if url.find('special') > 0:
-			company_id = url_arr[-2]
-			t = MyThread(func.get_special_company_info,url)
-		else:
-			url_pam_str = url_arr[-1]
-			str_p = url_pam_str.find('_')
-			if str_p > 0:
-				url_pam_str = url_pam_str[str_p:]
-			an = re.search(r'\d+',url_pam_str)
-			company_id = an.group()
-			t = MyThread(func.get_common_company_info,url)
+	for val in list:
+		t = MyThread(print_time,val)
 		threads.append(t)
 	for i in files:
 		threads[i].start()

@@ -19,8 +19,8 @@ def get_special_company_info(url):
 	company_name = special_doc('.companyname:eq(0)').text()
         print company_name,company_info,url
 #url = 'http://special.zhaopin.com/pagepublish/19908441/index.html'
-url = 'http://special.zhaopin.com/pagepublish/14499837/index.html'
-get_special_company_info(url=url)
+#url = 'http://special.zhaopin.com/pagepublish/14499837/index.html'
+#get_special_company_info(url=url)
 
 #智联普通企业简介
 def get_common_company_info(url):
